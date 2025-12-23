@@ -426,18 +426,6 @@ ul li::before {
     border-radius: 10px;
 }
 
-/* En pantallas pequeñas, la imagen va arriba del texto */
-@media (max-width: 768px) {
-    .service-content {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .service-img-service {
-        margin-bottom: 10px;
-    }
-}
-
 .footer-container {
     background-color: var(--black-industrial);
     color: #ffffff;
@@ -494,6 +482,19 @@ html, body {
     overflow-x: hidden;
 }
 
+/* En pantallas pequeñas, la imagen va arriba del texto */
+@media (max-width: 768px) {
+    .service-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .service-img-service {
+        margin-bottom: 10px;
+    }
+}
+
 @media (max-width: 768px) {
     .section {
         padding: 50px 16px;
@@ -514,6 +515,15 @@ html, body {
         font-size: 1.05rem;
     }
 }
+
+@media (max-width: 768px) {
+    .service-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
 
 
 
