@@ -486,8 +486,8 @@ html, body {
 
     .header-main {
         flex-direction: column;
-        gap: 12px;
         text-align: center;
+        gap: 10px;
     }
 
     .header-nav ul {
@@ -509,7 +509,6 @@ html, body {
     .footer-row {
         flex-direction: column;
         text-align: center;
-        gap: 30px;
     }
 
 }
