@@ -536,3 +536,19 @@ html, body {
         margin-bottom: 6px;
     }
 }
+
+/* ===============================
+   FIX DESKTOP HEADER & FOOTER
+================================ */
+
+/* HEADER */
+.header-main > * {
+    width: auto;
+    flex: 0 0 auto;
+}
+
+/* FOOTER */
+.footer-row > * {
+    width: auto;
+    flex: 1;
+}
