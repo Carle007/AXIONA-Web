@@ -398,8 +398,9 @@ ul li::before {
 
 .service-content {
     display: flex;
-    align-items: center; /* centra verticalmente la imagen con el texto */
     gap: 20px;
+    align-items: center;
+    flex-wrap: wrap; /* 🔥 esto es clave */
 }
 
 .service-img-service {
@@ -476,5 +477,6 @@ html, body {
     max-width: 100%;
     overflow-x: hidden;
 }
+
 
 
