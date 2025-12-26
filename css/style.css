@@ -364,6 +364,56 @@ ul li::before {
     transform: translateY(0);
 }
 
+.status {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.status-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: var(--status-ok);
+    box-shadow: 
+        0 0 4px rgba(22,163,74,0.8),
+        0 0 10px rgba(22,163,74,0.6);
+}
+
+.status-dot.active {
+    animation: pulse-led 1.8s infinite;
+}
+
+@keyframes pulse-led {
+    0% {
+        box-shadow:
+            0 0 4px rgba(22,163,74,0.6),
+            0 0 10px rgba(22,163,74,0.4);
+    }
+    50% {
+        box-shadow:
+            0 0 8px rgba(22,163,74,1),
+            0 0 18px rgba(22,163,74,0.9);
+    }
+    100% {
+        box-shadow:
+            0 0 4px rgba(22,163,74,0.6),
+            0 0 10px rgba(22,163,74,0.4);
+    }
+}
+
+.status-text {
+    font-size: 1rem;
+    color: var(--text-main);
+    font-weight: 500;
+}
+
+.status-text strong {
+    color: var(--status-ok);
+    letter-spacing: 0.05em;
+}
+
 /* =====================================================
    RESPONSIVE – MOBILE
 ===================================================== */
@@ -411,5 +461,6 @@ ul li::before {
         text-align: center;
     }
 }
+
 
 
