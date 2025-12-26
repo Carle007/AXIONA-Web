@@ -339,7 +339,7 @@ ul li::before {
 
 .footer-social-links img {
     width: 30px;
-    filter: brightness(0) invert(1);
+    /*filter: brightness(0) invert(1);*/
 }
 
 /* Copy */
@@ -461,6 +461,7 @@ ul li::before {
         text-align: center;
     }
 }
+
 
 
 
