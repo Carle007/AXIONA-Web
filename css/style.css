@@ -17,6 +17,11 @@
     --status-error: #DC2626;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 /* =====================================================
    RESET BÁSICO
 ===================================================== */
@@ -176,52 +181,110 @@ h3 {
 ===================================================== */
 .section {
     background-color: var(--bg-section);
-    padding: 80px 20px;
-    margin: 40px auto;
+    padding: 20px 20px;
+    margin: 10px auto;
     border-radius: 12px;
     box-shadow: 0 6px 15px rgba(0,0,0,0.08);
-    max-width: 1200px;
+    width: 100%;
 }
 
 .block {
     margin-bottom: 30px;
 }
 
-/* =====================================================
+/* ===============================
    HERO
-===================================================== */
+=============================== */
+
 .hero {
-    background: linear-gradient(
-        120deg,
-        rgba(179,74,62,0.08),
-        rgba(32,66,84,0.08)
-    );
-    padding: 100px 20px;
-    border-radius: 12px;
+    position: relative;
+    min-height: 76vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4rem 2rem;
+
+    background-image:
+        linear-gradient(
+            rgba(10, 25, 45, 0.65),
+            rgba(10, 25, 45, 0.65)
+        ),
+        url("../Imagenes/hero-industrial.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    color: #ffffff;
+    text-align:center;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    letter-spacing: 0.15em;
+    margin-bottom: 2rem;
+    color: #ffffff;
     text-align: center;
 }
 
-.subtitle {
-    color: var(--text-secondary);
-    font-size: 1.3rem;
-    max-width: 1100px;
-    margin: 0 auto;
+.hero .subtitle {
+    font-size: 2rem;
+    line-height: 1.5;
+    color: #ffffff;
+    text-align: center;
 }
+
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: auto;
+    max-width: fit-content;
+
+    margin: 32px auto 0;
+
+    padding: 8px 20px;
+
+    font-size: 1.5rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    color: #ffffff;
+    background-color: rgba(31, 41, 51, 0.85);
+    border: 1px solid var(--accent);
+    border-radius: 4px;
+
+    cursor: pointer;
+
+    transition: background-color 0.3s ease,
+                color 0.3s ease,
+                transform 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent);
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
 
 /* =====================================================
    GRID Y SERVICIOS
 ===================================================== */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+    text-align: center;
+    justify-items: center;
 }
 
 /* Tarjetas de servicio */
 .block.service,
 .grid div {
     background: linear-gradient(180deg, #ffffff, #f9f9f9);
-    padding: 30px 25px;
+    padding: 10px 25px;
     border-radius: 12px;
     border-left: 4px solid var(--brick);
     box-shadow: 0 8px 20px rgba(0,0,0,0.08);
@@ -254,6 +317,78 @@ h3 {
     flex: 1;
 }
 
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 3rem;
+    text-align: center;
+}
+
+.featured-services {
+    display: flex;
+    justify-content: center;
+    padding: 2.5rem 2rem;
+    background-color:var(--bg-section);
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 260px);
+    gap: 1rem;
+    background: var(--bg-section);
+}
+
+.service-card {
+    background-color: var(--surface);
+    padding: 2.5rem 2rem;
+    border-radius: 12px;
+    text-align: center;
+    border-left: 4px solid var(--brick);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+}
+
+.container.projects {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 3rem;
+    text-align: center;
+    color:#ffffff;
+}
+
+.featured-grid.projects {
+    display: grid;
+    grid-template-columns: repeat(4, 260px);
+    gap: 1rem;
+    background: var(--blue-deep);
+    margin-top: 2rem;
+}
+
+.featured-services.projects {
+    display: flex;
+    justify-content: center;
+    padding: 2.5rem 2rem;
+    background-color:var(--blue-deep);
+    border-radius: 50px;
+}
+
+.featured-services.projects .service-card {
+    background-color: var(--bg-section);
+    padding: 2.5rem 2rem;
+    border-radius: 12px;
+    text-align: center;
+    border-left: 4px solid var(--brick);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    color:#000000;
+}
+
+
 /* ===============================
    IMÁGENES DE TARJETAS (BASE)
    Define el comportamiento visual
@@ -273,12 +408,18 @@ h3 {
     height: 220px;
 }
 
+.projects .service-img {
+    filter: grayscale(40%);
+    opacity: 0.85;
+}
+
 /* ===============================
    IMÁGENES - SERVICIOS
 ================================ */
 .service-img-service {
     height: 300px;
 }
+
 
 /* =====================================================
    LISTAS
@@ -305,7 +446,7 @@ ul li::before {
    FOOTER
 ===================================================== */
 .footer-container {
-    background-color: var(--black-industrial);
+    background-color: var(--blue-deep);
     color: #ffffff;
     padding: 40px 20px;
 }
@@ -365,7 +506,6 @@ ul li::before {
 }
 
 .status {
-    display: flex;
     align-items: center;
     gap: 12px;
     margin-top: 24px;
@@ -462,6 +602,14 @@ ul li::before {
     }
 }
 
+@media (max-width: 1200px) {
+    .featured-grid {
+        grid-template-columns: repeat(2, 260px);
+    }
+}
 
-
-
+@media (max-width: 700px) {
+    .featured-grid {
+        grid-template-columns: 1fr;
+    }
+}
