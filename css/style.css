@@ -297,6 +297,10 @@ h3 {
     box-shadow: 0 12px 30px rgba(0,0,0,0.15);
 }
 
+.block:nth-child(even) {
+    margin-top: 60px;
+}
+
 .service-content {
     display: flex;
     flex-direction : row;
@@ -328,7 +332,7 @@ h3 {
     display: flex;
     justify-content: center;
     padding: 2.5rem 2rem;
-    background-color:var(--bg-section);
+    background-color:#ffffff;
 }
 
 .featured-grid {
@@ -353,42 +357,6 @@ h3 {
     box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
 }
 
-.container.projects {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 3rem;
-    text-align: center;
-    color:#ffffff;
-}
-
-.featured-grid.projects {
-    display: grid;
-    grid-template-columns: repeat(4, 260px);
-    gap: 1rem;
-    background: var(--blue-deep);
-    margin-top: 2rem;
-}
-
-.featured-services.projects {
-    display: flex;
-    justify-content: center;
-    padding: 2.5rem 2rem;
-    background-color:var(--blue-deep);
-    border-radius: 50px;
-}
-
-.featured-services.projects .service-card {
-    background-color: var(--bg-section);
-    padding: 2.5rem 2rem;
-    border-radius: 12px;
-    text-align: center;
-    border-left: 4px solid var(--brick);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-    transition: transform 0.5s ease, box-shadow 0.5s ease;
-    color:#000000;
-}
-
-
 /* ===============================
    IMÁGENES DE TARJETAS (BASE)
    Define el comportamiento visual
@@ -406,11 +374,6 @@ h3 {
 ================================ */
 .service-img {
     height: 220px;
-}
-
-.projects .service-img {
-    filter: grayscale(40%);
-    opacity: 0.85;
 }
 
 /* ===============================
@@ -552,6 +515,172 @@ ul li::before {
 .status-text strong {
     color: var(--status-ok);
     letter-spacing: 0.05em;
+}
+
+.status {
+    display: inline-flex;
+    padding: 12px 20px;
+    border-radius: 30px;
+    background: rgba(22,163,74,0.08);
+    border: 1px solid rgba(22,163,74,0.4);
+}
+
+/* ===============================
+   PROYECTOS – IDENTIDAD VISUAL
+================================ */
+
+.featured-services.projects {
+    background: linear-gradient(
+        135deg,
+        #162a38,
+        #204254
+    );
+    padding: 4rem 2rem;
+    border-radius: 0;
+}
+
+.featured-services.projects h2,
+.featured-services.projects p {
+    color: #ffffff;
+    text-align: center;
+}
+
+.featured-grid.projects {
+    background: transparent;
+    margin-top: 50px;
+}
+
+.featured-services.projects .service-card {
+    background-color: rgba(255,255,255,0.95);
+    border-left: none;
+    border-top: 4px solid var(--brick);
+    text-align: center;
+}
+
+.featured-services.projects .service-card h3 {
+    color: var(--blue-deep);
+}
+
+.featured-services.projects .service-card p {
+    font-size: 0.95rem;
+    color: #374151;
+}
+
+.projects .service-img {
+    filter: grayscale(40%);
+    opacity: 0.85;
+}
+
+
+/* ===============================
+   FONDO TÉCNICO – GRID SUAVE
+================================ */
+.tech-bg {
+    position: relative;
+    overflow: hidden;
+}
+
+.tech-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,0.08) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.08) 1px,
+            transparent 1px
+        );
+
+    background-size: 160px 160px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.tech-bg > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* ===============================
+   SEPARADOR DIAGONAL
+================================ */
+.section-divider {
+    position: relative;
+    height: 2px;
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(32, 66, 84, 0.45),
+        transparent
+    );
+    margin: 90px auto;
+    width: 70%;
+    overflow: hidden;
+}
+
+/* Línea de acento técnica */
+.section-divider::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 1000px;
+    height: 6px;
+
+    background: linear-gradient(
+        -45deg,
+        transparent 30%,
+        var(--brick),
+        transparent 70%
+    );
+
+    transform: translate(-50%, -50%) skewX(-25deg);
+    opacity: 0.85;
+}
+
+.section-divider::after {
+    animation: glow 3s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+}
+
+
+/* ===============================
+   LÍNEAS INDUSTRIALES LATERALES
+================================ */
+.container {
+    position: relative;
+}
+
+.container::before,
+.container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(
+        transparent,
+        rgba(0,0,0,0.08),
+        transparent
+    );
+}
+
+.container::before {
+    left: 0;
+}
+
+.container::after {
+    right: 0;
 }
 
 /* =====================================================
