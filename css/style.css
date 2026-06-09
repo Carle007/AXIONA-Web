@@ -129,17 +129,27 @@ h3 {
 }
 
 /* Logo */
+.logo {
+    display: inline-block; /* Asegura que el contenedor se ajuste al tamaño del H1 */
+}
+
 .logo h1 {
     margin: 0;
     color: #ffffff;
     font-size: 3.7rem;
     line-height: 1.1;
+    text-transform: uppercase; /* Opcional: AXIONA se ve mejor alineado en mayúsculas */
 }
 
 .logo-subtitle {
-    align-items: center;
+    display: block; /* Obliga al subtítulo a ocupar su propia línea completa */
     font-size: 0.85rem;
     color: #cfd8dc;
+    text-transform: uppercase; /* Ayuda a que el bloque se vea simétrico */
+    
+    /* El truco de magia para justificar el texto a lo largo de AXIONA */
+    text-align: justify;
+    text-align-last: justify; 
 }
 
 /* Navegación */
