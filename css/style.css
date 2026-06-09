@@ -150,7 +150,7 @@ h3 {
     margin-top: 5px; /* Separación sutil respecto al H1 */
     
     /* El truco: Espaciado de letras manual para abarcar el ancho de AXIONA */
-    letter-spacing: 0.42em; 
+    letter-spacing: 0.6em; 
     
     /* Compensación importante: el último carácter también genera espacio a la derecha, 
        con este padding negativo lo centramos perfectamente */
