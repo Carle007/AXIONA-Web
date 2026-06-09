@@ -137,6 +137,7 @@ h3 {
 }
 
 .logo-subtitle {
+    align-items: center;
     font-size: 0.85rem;
     color: #cfd8dc;
 }
